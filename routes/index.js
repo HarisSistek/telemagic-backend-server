@@ -23,7 +23,8 @@ router.get('/', function(req, res, next) {
     .then(function (result) {
       // returns a json format
       console.log(result);
-      res.send(result);
+      console.log(result[0].agentId)
+      res.send(JSON.parse(result));
     })
     .catch(function (err) {
       // something failed

@@ -28,7 +28,7 @@ router.get('/', function(req, res, next) {
     })
     .catch(function (err) {
       // something failed
-      console.log(err);
+      console.log(err.error);
     });
 
 });
@@ -61,7 +61,7 @@ router.post('/', function(req, res, next) {
     .catch(function (err) {
       // something failed
       console.log("Error returned");
-      console.log(err);
+      console.log(err.error);
       res.status(400).send({"error_code": 100, "error_message": "Can't create new user" })
     });
 
@@ -93,7 +93,7 @@ router.delete('/:agentId', function(req, res, next) {
     .catch(function (err) {
       // something failed
       console.log("Error returned");
-      console.log(err);
+      console.log(err.error);
       res.status(400).send({"error_code": 100, "error_message": "Can't delete user with agentId: " + req.params.agentId })
     });
 
@@ -128,7 +128,7 @@ router.put('/:agentId', function(req, res, next) {
     .catch(function (err) {
       // something failed
       console.log("Error returned");
-      console.log(err);
+      console.log(err.error);
       res.status(400).send({"error_code": 100, "error_message": "Can't update user with agentId: " + req.params.agentId })
     });
 
